@@ -1,10 +1,22 @@
 <div class="container">
   <div class="row">
-    <h1 class="">Experiencia laboral</h1>
-    <button class="btn btn-outline-info" routerLink="/nuevaexp" *ngif="isLogged">+</button>
+    <h1 class="">Experiencia laboral
+
+      <i routerLink="/nuevaexp" *ngIf="isLogged" class="bi bi-plus"></i>
+
+    </h1>    
+
+   
     <div class="col-lg-6 pt-5" *ngFor="let experiencia of exp">
 
-      <h5>{{experiencia.nombreE}}</h5>
+      <h5>{{experiencia.nombreE}}
+        
+        <!-- editar icon -->
+        <i routerLink="/editexp/{{experiencia.id}}" *ngIf="isLogged" class="bi bi-pencil"></i>
+        <!-- delete icon -->
+        <i (click)="delete(experiencia.id)" *ngIf="isLogged"  class="bi bi-trash3-fill"></i>
+
+      </h5>
       <p>{{experiencia.descripcionE}}</p>
 
 

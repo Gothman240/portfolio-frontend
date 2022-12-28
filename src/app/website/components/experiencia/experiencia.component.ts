@@ -35,4 +35,12 @@ export class ExperienciaComponent implements OnInit {
     })
   }
 
+  delete(id?: number){
+    if (id!= undefined) {
+      this.expSev.delete(id).subscribe( data => {
+        this.cargarExp();
+      })
+    }
+  }
+
 }
