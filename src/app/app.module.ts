@@ -20,6 +20,14 @@ import { EditExpComponent } from './website/components/experiencia/edit-exp/edit
 import { EducacionComponent } from './website/components/educacion/educacion.component';
 import { NewEducacionComponent } from './website/components/educacion/new-educacion/new-educacion.component';
 import { EditEducacionComponent } from './website/components/educacion/edit-educacion/edit-educacion.component';
+import { EditSkillComponent } from './website/components/skills/edit-skill/edit-skill.component';
+import { NewSkillComponent } from './website/components/skills/new-skill/new-skill.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { EditMeComponent } from './website/components/me/edit-me/edit-me.component';
+
+
 
 @NgModule({
   declarations: [
@@ -38,13 +46,18 @@ import { EditEducacionComponent } from './website/components/educacion/edit-educ
     EducacionComponent,
     NewEducacionComponent,
     EditEducacionComponent,
+    EditSkillComponent,
+    NewSkillComponent,
+    EditMeComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

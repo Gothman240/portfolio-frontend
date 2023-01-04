@@ -2,8 +2,10 @@
 
 
     <div class="hex"><img
-            src="https://images.pexels.com/photos/1421264/pexels-photo-1421264.jpeg?cs=srgb&dl=aerial-aerial-photo-aerial-photography-1421264.jpg&fm=jpg"
-            alt="some">
+        src="https://images.pexels.com/photos/1421264/pexels-photo-1421264.jpeg?cs=srgb&dl=aerial-aerial-photo-aerial-photography-1421264.jpg&fm=jpg"
+        alt="some">
+        <!-- editar icon -->
+        <i routerLink="/editme/{{persona.id}}" *ngIf="isLogged" class="bi bi-pencil"></i>
     </div>
 
 

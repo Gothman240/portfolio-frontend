@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Educacion } from '../model/educacion';
 
 @Injectable({
@@ -8,27 +9,27 @@ import { Educacion } from '../model/educacion';
 })
 export class EducacionService {
 
-  url = 'http://localhost:8080/educacion/';
+  url = environment.url + 'educacion/';
 
-  constructor(private htpp: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   public lista():Observable<Educacion[]> {
-    return this.htpp.get<Educacion[]> (this.url + 'lista');
+    return this.http.get<Educacion[]> (this.url + 'lista');
   }
 
   public detail(id: number):Observable<Educacion>{
-    return this.htpp.get<Educacion>(this.url + `detail/${id}`);
+    return this.http.get<Educacion>(this.url + `detail/${id}`);
   }
 
   public save(educacion: Educacion):Observable<any>{
-    return this.htpp.post<any>(this.url + 'create', educacion);
+    return this.http.post<any>(this.url + 'create', educacion);
   }
 
   public update(id: number,educacion:Educacion):Observable<any>{
-    return this.htpp.put<any>(this.url + `update/${id}`, educacion);
+    return this.http.put<any>(this.url + `update/${id}`, educacion);
   }
 
   public delete(id:number):Observable<any>{
-    return this.htpp.delete<any>(this.url + `delete/${id}`);
+    return this.http.delete<any>(this.url + `delete/${id}`);
   }
 }

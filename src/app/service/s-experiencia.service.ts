@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Experiencia } from '../model/experiencia';
 
 @Injectable({
@@ -8,27 +9,27 @@ import { Experiencia } from '../model/experiencia';
 })
 export class SExperienciaService {
 
-  expURL = 'http://localhost:8080/explab/'
+  url = environment.url + 'explab/';
 
   constructor(private http : HttpClient) { }
 
   public lista():Observable <Experiencia[]>{
-    return this.http.get<Experiencia[]>(this.expURL + 'lista');
+    return this.http.get<Experiencia[]>(this.url + 'lista');
   }
 
   public detail(id: number):Observable<Experiencia>{
-    return this.http.get<Experiencia>(this.expURL + `detail/${id }`);
+    return this.http.get<Experiencia>(this.url + `detail/${id }`);
   }
 
   public save(experiencia: Experiencia):Observable<any>{
-    return this.http.post<any>(this.expURL + 'create', experiencia)
+    return this.http.post<any>(this.url + 'create', experiencia)
   }
 
   public update(id: number, experiencia: Experiencia):Observable <any>{
-    return this.http.put<any>(this.expURL + `update/${id}`, experiencia);
+    return this.http.put<any>(this.url + `update/${id}`, experiencia);
   }
 
   public delete(id:number):Observable<any>{
-    return this.http.delete<any>(this.expURL + `delete/${id}`);
+    return this.http.delete<any>(this.url + `delete/${id}`);
   }
 }
