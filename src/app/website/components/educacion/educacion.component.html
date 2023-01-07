@@ -1,25 +1,26 @@
-<div class="container">
-    <div class="row">
-      <h1 class="">Educacion
-  
-        <i routerLink="/nuevaedu" *ngIf="isLogged" class="bi bi-plus"></i>
-  
-      </h1>    
-  
-     
-      <div class="col-lg-6 pt-5" *ngFor="let Educacion of educacion">
-  
-        <h5>{{Educacion.nombreE}}
-          
-          <!-- editar icon -->
-          <i routerLink="/editedu/{{Educacion.id}}" *ngIf="isLogged" class="bi bi-pencil"></i>
-          <!-- delete icon -->
-          <i (click)="borrar(Educacion.id)" *ngIf="isLogged"  class="bi bi-trash3-fill"></i>
-  
-        </h5>
-        <p>{{Educacion.descripcionE}}</p>
-  
-  
-      </div>
+<div class="row justify-content-center align-items-center text-center g-2">
+  <h1 class="col-12">Educacion
+
+    <i routerLink="/nuevaedu" *ngIf="isLogged" class="bi bi-plus"></i>
+
+  </h1>
+
+
+  <div class="col-lg-3 pt-5" *ngFor="let Educacion of educacion">
+
+    <div class="hex-about">
+      <i class="bi bi-pc-display"></i>
     </div>
+
+    <!-- editar icon -->
+    <i routerLink="/editedu/{{Educacion.id}}" *ngIf="isLogged" class="bi bi-pencil"></i>
+    <!-- delete icon -->
+    <i (click)="borrar(Educacion.id)" *ngIf="isLogged" class="bi bi-trash3-fill"></i>
+
+    <h2>{{Educacion.nombreE}}</h2>
+    <p>{{Educacion.descripcionE}}</p>
+    <i>{{Educacion.fechaE}}</i>
+
+
   </div>
+</div>
