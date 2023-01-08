@@ -6,13 +6,13 @@
 
     width: 105px;
     height: 110px;
-    background-color:#f95959;
+    background-color:#ff9a3c;
     clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
     
 }
 
-.hex-about i {
+.fa-graduation-cap {
     transform: scale(2.5);
-    color: aliceblue;
+    color: #fff;
 }
 

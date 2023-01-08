@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Storage, ref, uploadBytes, list, getDownloadURL } from '@angular/fire/storage';
-import { persona } from '../model/persona.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +9,8 @@ export class ImageService {
   url:string  = "";
 
   constructor(private fireStorage: Storage) { }
+
+  
 
   public uploadImg($event: any, name : string){
     const file = $event.target.files[0]
@@ -24,8 +25,8 @@ export class ImageService {
   getImages(){
     const imagesRef =  ref(this.fireStorage, 'imagen')
     list(imagesRef)
-    .then(async respone => {
-      for(let item of respone.items){
+    .then(async response => {
+      for(let item of response.items){
         this.url = await getDownloadURL(item);
       }
     })
